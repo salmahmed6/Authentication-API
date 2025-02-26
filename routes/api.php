@@ -39,3 +39,11 @@ Route::patch("/hello", function () {
 Route::post('/createRandomUser', UserController::class, 'createRandomUser');
 
 Route::post('/createArticle', ArticleController::class, 'createArticle');
+
+Route::get('/getArticles', ArticleController::class, 'getArticles');
+
+Route::get('/getArticle/{id}', ArticleController::class, 'getArticleById');
+
+Route::delete('/deleteArticle/{id}', ArticleController::class, 'deleteArticle');
+
+Route::put('/updateArticle/{id}', ArticleController::class, 'updateArticle');

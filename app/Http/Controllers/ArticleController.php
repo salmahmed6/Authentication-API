@@ -16,4 +16,31 @@ class ArticleController extends Controller
         ]);
         return $article;
     }
+
+    function getArticles()
+    {
+        $articles = Article::all();
+        return $articles;
+    }
+
+    function getArticleById($id)
+    {
+        $article = Article::find($id);
+        return $article;
+    }
+
+    function deleteArticle($id)
+    {
+        $article = Article::find($id);
+        $article->delete();
+        return "article deleted";
+    }
+
+    function updateArticle($id, Request $request)
+    {
+        $article = Article::find($id);
+        $article->update($request->all());
+        $article->save();
+        return $article;
+    }
 }
