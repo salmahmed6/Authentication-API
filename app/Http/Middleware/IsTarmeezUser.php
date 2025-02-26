@@ -15,7 +15,8 @@ class IsTarmeezUser
      */
     public function handle(Request $request, Closure $next): Response
     {
-        dd("hello");
+
+        return "Hello from middleware";
         return $next($request);
     }
 }
