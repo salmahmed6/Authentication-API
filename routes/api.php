@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Controllers\UserController;
+use Illuminate\Http\Controllers\ArticleController;
 use App\Http\Middleware\IsTarmeezUser;
 use Illuminate\Http\Request;
 
@@ -35,4 +36,6 @@ Route::patch("/hello", function () {
 });
 
 
-Route::post('/createRandomUser', UserController::class . '@createRandomUser');
+Route::post('/createRandomUser', UserController::class, 'createRandomUser');
+
+Route::post('/createArticle', ArticleController::class, 'createArticle');
