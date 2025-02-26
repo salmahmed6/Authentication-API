@@ -47,3 +47,7 @@ Route::get('/getArticle/{id}', ArticleController::class, 'getArticleById');
 Route::delete('/deleteArticle/{id}', ArticleController::class, 'deleteArticle');
 
 Route::put('/updateArticle/{id}', ArticleController::class, 'updateArticle');
+
+Route::post('/register', UserController::class, 'register');
+
+Route::post('/login', UserController::class, 'login');
