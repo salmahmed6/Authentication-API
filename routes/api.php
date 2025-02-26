@@ -1,7 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Controllers\UserController;
 use App\Http\Middleware\IsTarmeezUser;
+use Illuminate\Http\Request;
+
 
 
 Route::middleware('auth:sancutm')->get('/user', function (Request $request) {
@@ -30,3 +33,6 @@ Route::put("/hello", function () {
 Route::patch("/hello", function () {
     return response()->json(["data" => "patch request to hello"]);
 });
+
+
+Route::post('/createRandomUser', UserController::class . '@createRandomUser');
